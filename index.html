@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>临时指向</title>
+    <title>临时指向：日夜交替</title>
 
     <style>
      .templink {
-       width: 100%;
-       height: 100%;
+       width: 1%;
+       height: 1%;
        display: block;
        position: fixed;
        z-index: 100;
@@ -20,9 +20,51 @@
      }
     </style>
 
+  <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>   
   </head>
   
   <body>
+  
+     <div id="sky"></div>
+    <div id="sun_yellow"></div>
+    <div id="sun_red"></div>
+    <div id="clouds"></div>
+    <div id="ground"></div>
+    <div id="night"></div>
+    <div id="stars"></div>
+    <div id="sstar"></div>
+    <div id="moon"></div>
+    <div id="title"></div>   
+    <div>
+      <a id="back" href="http://wiii.ga"></a>
+    </div>
+    
+   <script type="text/javascript" src="js/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="js/jquery.color.js"></script>
+    
+    <script type="text/javascript">
+     $(function() {
+       $('#sun_yellow').animate({'top':'96%','opacity':0.4}, 12000,function(){
+         $('#stars').animate({'opacity':1}, 5000,function(){
+           $('#moon').animate({'top':'30%','opacity':1}, 5000, function(){
+             $('#sstar').animate({'opacity':1}, 300);
+             $('#sstar').animate({
+               'backgroundPosition':'0px 0px','top':'15%', 'opacity':0
+             }, 500,function(){
+               $('#title').animate({'opacity':1}, 1000);
+               $('#back').animate({'opacity':1}, 3000);
+             });
+           });
+         });
+       });
+       $('#sun_red').animate({'top':'96%','opacity':0.8}, 12000);
+       $('#sky').animate({'backgroundColor':'#4F0030'}, 18000);
+       $('#clouds').animate({'backgroundPosition':'1000px 0px','opacity':0}, 30000);
+       $('#night').animate({'opacity':0.8}, 20000);
+     });
+    </script>
+        
     
     <iframe class="templink" src="http://shop115364028.taobao.com"></iframe>
     
